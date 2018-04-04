@@ -1,7 +1,7 @@
 # Log HTTP requests
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/chelout/laravel-http-logger.svg)](https://packagist.org/packages/chelout/laravel-http-logger)
-[![Total Downloads](https://img.shields.io/packagist/dt/chelout/laravel-http-logger.svg)](https://packagist.org/packages/chelout/laravel-http-logger)
-[![License](https://poser.pugx.org/chelout/laravel-relationship-events/license)](https://packagist.org/packages/chelout/laravel-relationship-events)
+[![Latest Stable Version](https://poser.pugx.org/chelout/laravel-http-logger/v/stable)](https://packagist.org/packages/chelout/laravel-http-logger)
+[![Total Downloads](https://poser.pugx.org/chelout/laravel-http-logger/downloads)](https://packagist.org/packages/chelout/laravel-http-logger)
+[![License](https://poser.pugx.org/chelout/laravel-http-logger/license)](https://packagist.org/packages/chelout/laravel-http-logger)
 
 This package provides a middleware to log incoming http requests data (body data, headers and session data). It utilizes [Laravel 5.6 logging servises](https://laravel.com/docs/5.6/logging) functionality.
 This package might be useful to log user requests to public apis.
