@@ -1,9 +1,9 @@
-# Log HTTP requests
+# Log HTTP requests, headers and session data
 [![Latest Stable Version](https://poser.pugx.org/chelout/laravel-http-logger/v/stable)](https://packagist.org/packages/chelout/laravel-http-logger)
 [![Total Downloads](https://poser.pugx.org/chelout/laravel-http-logger/downloads)](https://packagist.org/packages/chelout/laravel-http-logger)
 [![License](https://poser.pugx.org/chelout/laravel-http-logger/license)](https://packagist.org/packages/chelout/laravel-http-logger)
 
-This package provides a middleware to log incoming http requests data (body data, headers and session data). It utilizes [Laravel 5.6 logging servises](https://laravel.com/docs/5.6/logging) functionality.
+This package provides a middleware to log incoming http requests data (body data, headers and session data). It utilizes [Laravel 5.6 logging services](https://laravel.com/docs/5.6/logging) functionality.
 This package might be useful to log user requests to public apis.
 
 ## Installation
@@ -149,6 +149,12 @@ return [
     ],
 ];
 ```
+
+### Todo
+- tests
+- log file uploads
+- log git data?
+- log memory usage?
 
 
 ### Testing
