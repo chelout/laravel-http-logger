@@ -14,6 +14,7 @@ class RequestDataProcessor
         return array_merge_recursive($record, [
             'context' => array_filter([
                 'data' => $this->processContext('data'),
+                'files' => $this->processContext('files'),
                 'headers' => $this->processContext('headers'),
                 'session' => $this->processContext('session'),
             ]),
@@ -64,13 +65,33 @@ class RequestDataProcessor
     }
 
     /**
-     * Get request body data.
+     * Get request body data except files.
      *
      * @return array
      */
     protected function getData(): array
     {
-        return request()->all();
+        return request()->except(
+            request()->files->keys()
+        );
+    }
+
+    /**
+     * Get files.
+     *
+     * @return array
+     */
+    protected function getFiles(): array
+    {
+        return collect(request()->files->all())
+            ->flatten()
+            ->map(function ($file) {
+                return [
+                    'name' => $file->getClientOriginalName(),
+                    'size' => $file->getClientSize(),
+                ];
+            })
+            ->toArray();
     }
 
     /**

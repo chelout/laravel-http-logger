@@ -12,17 +12,35 @@ return [
 
     /*
      * Log message format.
-     * For for details see https://github.com/Seldaek/monolog/blob/master/doc/01-usage.md#customizing-the-log-format
-     * and https://github.com/Seldaek/monolog/blob/master/src/Monolog/Formatter/LineFormatter.php
+     * @see https://github.com/Seldaek/monolog/blob/master/doc/01-usage.md#customizing-the-log-format
+     * @see https://github.com/Seldaek/monolog/blob/master/src/Monolog/Formatter/LineFormatter.php
      */
     'format' => "[%datetime%] %extra.method% %extra.url% from %extra.ips% %context%\n",
 
     /*
      * Log message datetime format.
-     * For for details see https://github.com/Seldaek/monolog/blob/master/doc/01-usage.md#customizing-the-log-format
-     * and https://github.com/Seldaek/monolog/blob/master/src/Monolog/Formatter/LineFormatter.php
+     * @see https://github.com/Seldaek/monolog/blob/master/doc/01-usage.md#customizing-the-log-format
+     * @see https://github.com/Seldaek/monolog/blob/master/src/Monolog/Formatter/LineFormatter.php
      */
-    'dateFormat' => null, // "Y-m-d\TH:i:sP"
+    'date_format' => null, // "Y-m-d\TH:i:sP"
+
+    /*
+     * Log current memory usage
+     * @see https://github.com/Seldaek/monolog/blob/master/src/Monolog/Processor/MemoryUsageProcessor.php
+     */
+    'memory_usage' => true,
+
+    /*
+     * Log peak memory usage
+     * @see https://github.com/Seldaek/monolog/blob/master/src/Monolog/Processor/MemoryPeakUsageProcessor.php
+     */
+    'memory_peak_usage' => true,
+
+    /*
+     * Log current git branch and commit
+     * @see https://github.com/Seldaek/monolog/blob/master/src/Monolog/Processor/GitProcessor.php
+     */
+    'git' => true,
 
     /*
      * false - don't log body fields
@@ -33,6 +51,19 @@ return [
      */
     // 'data' => false,
     'data' => [
+        'only' => [],
+        'except' => [],
+    ],
+
+    /*
+     * false - don't log uploaded files
+     * ['only'] - log files only
+     * ['except'] - don't log files
+     *
+     * If ['only'] is set, ['except'] parametr will be omitted
+     */
+    // 'files' => false,
+    'files' => [
         'only' => [],
         'except' => [],
     ],

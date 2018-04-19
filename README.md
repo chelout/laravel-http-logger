@@ -3,7 +3,7 @@
 [![Total Downloads](https://poser.pugx.org/chelout/laravel-http-logger/downloads)](https://packagist.org/packages/chelout/laravel-http-logger)
 [![License](https://poser.pugx.org/chelout/laravel-http-logger/license)](https://packagist.org/packages/chelout/laravel-http-logger)
 
-This package provides a middleware to log incoming http requests data (body data, headers and session data). It utilizes [Laravel 5.6 logging services](https://laravel.com/docs/5.6/logging) functionality.
+This package provides a middleware to log incoming http requests data (body data, files, headers and session data). It utilizes [Laravel 5.6 logging servises](https://laravel.com/docs/5.6/logging) functionality.
 This package might be useful to log user requests to public apis.
 
 ## Installation
@@ -46,7 +46,25 @@ return [
      * For for details see https://github.com/Seldaek/monolog/blob/master/doc/01-usage.md#customizing-the-log-format
      * and https://github.com/Seldaek/monolog/blob/master/src/Monolog/Formatter/LineFormatter.php
      */
-    'dateFormat' => null, // "Y-m-d\TH:i:sP"
+    'date_format' => null, // "Y-m-d\TH:i:sP"
+
+    /*
+     * Log current memory usage
+     * @see https://github.com/Seldaek/monolog/blob/master/src/Monolog/Processor/MemoryUsageProcessor.php
+     */
+    'memory_usage' => true,
+
+    /*
+     * Log peak memory usage
+     * @see https://github.com/Seldaek/monolog/blob/master/src/Monolog/Processor/MemoryPeakUsageProcessor.php
+     */
+    'memory_peak_usage' => true,
+
+    /*
+     * Log current git branch and commit
+     * @see https://github.com/Seldaek/monolog/blob/master/src/Monolog/Processor/GitProcessor.php
+     */
+    'git' => true,
 
     /*
      * false - don't log body fields
@@ -57,6 +75,19 @@ return [
      */
     // 'data' => false,
     'data' => [
+        'only' => [],
+        'except' => [],
+    ],
+
+    /*
+     * false - don't log uploaded files
+     * ['only'] - log files only
+     * ['except'] - don't log files
+     *
+     * If ['only'] is set, ['except'] parametr will be omitted
+     */
+    // 'files' => false,
+    'files' => [
         'only' => [],
         'except' => [],
     ],
@@ -152,7 +183,6 @@ return [
 
 ### Todo
 - tests
-- log file uploads
 - log git data?
 - log memory usage?
 
