@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.0] - 2018-04-19
+### Added
+- Config parametr to adjust HTTP methods to be logged
+
 ## [1.1.0] - 2018-04-19
 ### Added
 - Log files (file name and size)

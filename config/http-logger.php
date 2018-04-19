@@ -11,6 +11,13 @@ return [
     'max_files' => 5,
 
     /*
+     * Log methods
+     * [] - log all methods
+     * ['get','post'] - log only 'get' and 'post' methods
+     */
+    'methods' => [],
+
+    /*
      * Log message format.
      * @see https://github.com/Seldaek/monolog/blob/master/doc/01-usage.md#customizing-the-log-format
      * @see https://github.com/Seldaek/monolog/blob/master/src/Monolog/Formatter/LineFormatter.php
