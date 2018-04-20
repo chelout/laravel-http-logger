@@ -204,6 +204,9 @@ composer test
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
+## Inspiration
+This package was inspired by [Log HTTP requests](https://github.com/spatie/laravel-http-logger) and [Laravel Log Enhancer](https://github.com/freshbitsweb/laravel-log-enhancer) and [Laravel 5.6 logging servises](https://laravel.com/docs/5.6/logging).
+
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
