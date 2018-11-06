@@ -13,6 +13,7 @@ class RequestDataProcessor
     {
         return array_merge_recursive($record, [
             'context' => array_filter([
+                'raw' => $this->processContext('raw'),
                 'data' => $this->processContext('data'),
                 'files' => $this->processContext('files'),
                 'headers' => $this->processContext('headers'),
@@ -62,6 +63,18 @@ class RequestDataProcessor
         }
 
         return [];
+    }
+
+    /**
+     * Get request body data except files.
+     *
+     * @return array
+     */
+    protected function getRaw(): array
+    {
+        return [
+            request()->getContent(),
+        ];
     }
 
     /**
