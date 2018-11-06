@@ -50,6 +50,11 @@ return [
     'git' => true,
 
     /*
+     * false - don't log raw body
+     */
+    // 'raw' => false,
+
+    /*
      * false - don't log body fields
      * ['only'] - log fields only
      * ['except'] - don't log fields
